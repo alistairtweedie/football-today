@@ -1,0 +1,14 @@
+<div class="text-center">
+	<h1>Todays Fixtures</h1>
+
+	<div class="col-sm-6" data-ng-repeat="fixture in Fixture.todaysFixtures">
+		<div class="fixture">
+			<div data-ng-bind="fixture.homeTeamName"></div>
+			<div data-ng-bind="fixture.result.goalsHomeTeam"></div>
+			<div data-ng-bind="fixture.awayTeamName"></div>
+			<div data-ng-bind="fixture.result.goalsAwayTeam"></div>
+		</div>
+	</div>
+
+	<div data-ng-if="Fixture.todaysFixtures.length === 0">Sorry, no fixtures for today</div>
+</div>
