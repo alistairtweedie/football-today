@@ -3,6 +3,7 @@
 
 	<div class="col-sm-6" data-ng-repeat="fixture in Fixture.todaysFixtures">
 		<div class="fixture">
+			<div>Kick off: <span data-ng-bind="fixture.date | date:'medium'"></span></div>
 			<div data-ng-bind="fixture.homeTeamName"></div>
 			<div data-ng-bind="fixture.result.goalsHomeTeam"></div>
 			<div data-ng-bind="fixture.awayTeamName"></div>
