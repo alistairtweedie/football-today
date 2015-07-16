@@ -12,9 +12,13 @@ angular.module('football', ['ui.router']).config(function($stateProvider, $urlRo
 					return FixtureService.getTodaysFixtures();
 				}
 			}
+		})
+		.state('mock', {
+			url: '/test',
+			templateUrl: './js/module/partials/ui-mock.html'
 		});
 });
 
 angular.module('football').config(['$httpProvider', function($httpProvider) {
-    $httpProvider.defaults.headers.common['X-Auth-Token'] = 'INSERT_API_TOKEN_HERE';
+    $httpProvider.defaults.headers.common['X-Auth-Token'] = '3fbd5a28d70c480eb8f5c73ba328e16e';
 }]);
