@@ -3,6 +3,7 @@
     top: 0;
     width: 100%;
     transition: all 0.1s ease;
+    z-index: 10;
 }
 
 .header-container.hide {
@@ -137,4 +138,7 @@ nav::-webkit-scrollbar {
   position: relative;
 }
 
-
+.hide-header {
+  top: -110px;
+  transition: all 0.3s ease;
+}
