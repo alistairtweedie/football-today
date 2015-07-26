@@ -7,7 +7,5 @@ angular.module('football').controller('FixtureController', [
 			fixture.date = new Date(fixture.date);
 		});
 		fixtures.todaysFixtures = todaysFixtures.fixtures;
-		console.log(fixtures);
-
 	}
 ]);
