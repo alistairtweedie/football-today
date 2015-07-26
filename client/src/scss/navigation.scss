@@ -1,0 +1,140 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all 0.1s ease;
+}
+
+.header-container.hide {
+  top: -80px;
+  transition: all 0.3s ease;
+}
+
+.nav-bar {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    max-width: 640px;
+    padding-top: 8px;
+}
+
+.nav {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    @include calc(width, "100% - 2 * 45px");
+    overflow-x: auto;
+    left: 45px;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    // -webkit-user-select: none;
+    // -moz-user-select: none;
+    // -ms-user-select: none;
+    // user-select: none;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    display: inline-block;
+    padding: 1em;
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    // -webkit-user-select: inherit;
+    // -moz-user-select: inherit;
+    // -ms-user-select: inherit;
+    // user-select: inherit;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    opacity: .65;
+    position: relative;
+}
+
+.nav a.active {
+  opacity: 1;
+  border-bottom: 5px solid #FFC107;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav-wrapper {
+  background: $dark-green;
+}
+
+.nav-container::-webkit-scrollbar,
+.nav::-webkit-scrollbar,
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+.country {
+  width: 14px;
+  display: block;
+  float: left;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+
+
+.scrollindicator{
+  position: absolute;
+  top: 0;
+  line-height: 56px!important;
+  height: 56px;
+  width: 48px;
+  display: none;
+  margin-right: 0;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+}
+
+.scrollindicator.disabled {
+  opacity: .12;
+  cursor: default;
+}
+
+.scrollindicator.scrollindicator--right {
+  right: 0;
+}
+
+.scrollindicator.scrollindicator--left {
+  left: 0;
+}
+
+.title-wrapper {
+  background: $light-green;
+}
+
+.title-bar {
+  margin: 0 auto;
+  max-width: 640px;
+  position: relative;
+}
+
+

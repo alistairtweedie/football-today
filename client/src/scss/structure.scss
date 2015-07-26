@@ -1,0 +1,33 @@
+body {
+  background: $bg-grey;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.content{
+  max-width: 640px;
+  margin: 130px auto;
+}
+
+
+// .games {
+//   float: left;
+//   font-size: 13px;
+//   text-transform: uppercase;
+//   margin-bottom: 1em;
+// }
