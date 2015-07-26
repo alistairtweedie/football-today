@@ -1,15 +1,27 @@
-<div class="text-center">
-	<h1>Todays Fixtures</h1>
+<div class="content clearfix">
 
-	<div class="col-sm-6" data-ng-repeat="fixture in Fixture.todaysFixtures">
-		<div class="fixture">
-			<div>Kick off: <span data-ng-bind="fixture.date | date:'medium'"></span></div>
-			<div data-ng-bind="fixture.homeTeamName"></div>
-			<div data-ng-bind="fixture.result.goalsHomeTeam"></div>
-			<div data-ng-bind="fixture.awayTeamName"></div>
-			<div data-ng-bind="fixture.result.goalsAwayTeam"></div>
-		</div>
-	</div>
+  <div class="card" data-ng-repeat="fixture in Fixture.todaysFixtures">
+    <div class="match-progress"></div>
+    <div class="time clearfix">
+      <div class="value">53.24</div>
+    </div>
 
-	<div data-ng-if="Fixture.todaysFixtures.length === 0">Sorry, no fixtures for today</div>
+    <div class="result home clearfix">
+      <div class="team-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_FC_Bayern_M%C3%BCnchen.svg" alt="">
+      </div>
+      <div class="team-name" data-ng-bind="fixture.homeTeamName"></div>
+      <div class="score update" data-ng-if="fixture.result.goalsHomeTeam >=0"  data-ng-bind="fixture.result.goalsHomeTeam"></div>
+    </div>
+
+    <div class="result away clearfix">
+      <div class="team-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg" alt="">
+      </div>
+      <div class="team-name" data-ng-bind="fixture.awayTeamName"></div>
+      <div class="score" data-ng-if="fixture.result.goalsAwayTeam >=0" data-ng-bind="fixture.result.goalsAwayTeam"></div>
+    </div>
+
+  </div>
+
 </div>
