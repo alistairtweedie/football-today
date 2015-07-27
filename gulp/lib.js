@@ -2,8 +2,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat');
 
 gulp.task('lib', function () {
-	gulp.src([__dirname + '/../client/src/lib/bootstrap/dist/css/bootstrap.css'])
-		.pipe(gulp.dest(__dirname + '/../public/styles/lib/'));
+	// gulp.src([__dirname + '/../client/src/lib/bootstrap/dist/css/bootstrap.css'])
+// 	.pipe(gulp.dest(__dirname + '/../public/styles/lib/'));
 
 	gulp.src([__dirname + '/../client/src/lib/bootstrap/fonts/*'])
 		.pipe(gulp.dest(__dirname + '/../public/styles/fonts/'));
