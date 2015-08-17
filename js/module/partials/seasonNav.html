@@ -3,7 +3,7 @@
 			<div class="nav-bar">
 
 		        <nav class="nav">
-					<a href="#" data-ng-repeat="season in SeasonNav.seasons | orderBy:'orderId'" data-ui-sref="app.fixtures({leagueId: {{season.id}}})">
+					<a href="#" data-ng-repeat="season in SeasonNav.seasons | orderBy:'orderId'" data-ui-sref="app.fixtures({leagueId: {{season.id}}})" data-ui-sref-active="active">
 						<span class="country" data-ng-if="SeasonNav.hasFlag(season.league)">
 					  		<img data-ng-src="{{SeasonNav.getFlag(season.league)}}" alt="">
 					  	</span>

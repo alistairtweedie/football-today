@@ -50,36 +50,6 @@ angular.module('football').config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.headers.common['X-Auth-Token'] = '3fbd5a28d70c480eb8f5c73ba328e16e';
 }]);
 
-// angular.module('app').directive('MainDir', [function () {
-// 	return {
-// 		restrict: 'A',
-// 		link: function (scope, element, attrs) {
-// 			console.log('MainDir');
-// 		}
-// 	};
-// }]);
-
-angular.module('football').directive('hideHeader', ['$window', function($window) {
-    // Runs during compile
-    return {
-        link: function($scope, element) {
-            var lastScrollTop = 0;
-
-            angular.element($window).bind('scroll', function() {
-                var st = $window.pageYOffset;
-
-                if (st > lastScrollTop) {
-                    element.addClass('hide-header');
-                } else {
-                    element.removeClass('hide-header');
-                }
-
-               lastScrollTop = st;
-            });
-        }
-    };
-}]);
-
 angular.module('football').controller('FixtureController', [
 	'todaysFixtures',
 	function (todaysFixtures) {
@@ -178,6 +148,36 @@ angular.module('football').controller('TodayController', [
 		fixtures.todaysFixtures = todaysFixtures.fixtures;
 	}
 ]);
+
+// angular.module('app').directive('MainDir', [function () {
+// 	return {
+// 		restrict: 'A',
+// 		link: function (scope, element, attrs) {
+// 			console.log('MainDir');
+// 		}
+// 	};
+// }]);
+
+angular.module('football').directive('hideHeader', ['$window', function($window) {
+    // Runs during compile
+    return {
+        link: function($scope, element) {
+            var lastScrollTop = 0;
+
+            angular.element($window).bind('scroll', function() {
+                var st = $window.pageYOffset;
+
+                if (st > lastScrollTop) {
+                    element.addClass('hide-header');
+                } else {
+                    element.removeClass('hide-header');
+                }
+
+               lastScrollTop = st;
+            });
+        }
+    };
+}]);
 
 angular.module('football').service('FixtureService', [
 	'$http',
