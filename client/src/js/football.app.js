@@ -3,19 +3,32 @@
 angular.module('football', ['ui.router']).config(function($stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
-		.state('today', {
-			url: '/',
-			templateUrl: './js/module/partials/fixtures.html',
-			controller: 'FixtureController as Fixture',
-			resolve: {
-				todaysFixtures: function (FixtureService) {
-					return FixtureService.getTodaysFixtures();
+		.state('app', {
+			views: {
+				'navigation': {
+					templateUrl: './js/module/partials/seasonNav.html',
+					controller: 'SeasonNavController as SeasonNav',
+					resolve: {
+						seasons: ['SeasonService', function (SeasonService) {
+							return SeasonService.getSeasons();
+						}]
+					}
 				}
 			}
 		})
-		.state('mock', {
-			url: '/test',
-			templateUrl: './js/module/partials/ui-mock.html'
+		.state('app.today', {
+			url: '/',
+			views: {
+				'content@': {
+					templateUrl: './js/module/partials/fixtures.html',
+					controller: 'FixtureController as Fixture',
+					resolve: {
+						todaysFixtures: ['FixtureService', function (FixtureService) {
+							return FixtureService.getTodaysFixtures();
+						}]
+					}
+				}
+			}
 		});
 });
 
