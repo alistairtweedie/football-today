@@ -3,72 +3,12 @@
 			<div class="nav-bar">
 
 		        <nav class="nav">
-
 					<a href="#" data-ng-repeat="season in SeasonNav.seasons | orderBy:'orderId'">
-						<span class="country">
+						<span class="country" data-ng-if="SeasonNav.hasFlag(season.league)">
 					  		<img data-ng-src="{{SeasonNav.getFlag(season.league)}}" alt="">
 					  	</span>
 					  	<span data-ng-bind="season.caption.replace('2015/16', '')"></span>
 					</a>
-
-
-
-					<!-- <a href="#" class="active">
-						<span class="country">
-					  		<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Red_St_George's_Cross.svg" alt="">
-					  	</span>Premier League
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Red_St_George's_Cross.svg" alt="">
-							</span>Championship
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="">
-							</span>Primera Division
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="">
-							</span>Segunda Division
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="">
-							</span>Serie A
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="">
-							</span>Serie B
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="">
-							</span>Ligue 1
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="">
-							</span>Ligue 2
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="">
-							</span>Bundesliga 1
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="">
-							</span>Bundesliga 2
-					</a>
-					<a href="#">
-							<span class="country">
-								<img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="">
-							</span>Bundesliga 3
-					</a>
- -->
 		        </nav>
 
 		        <i class="material-icons scrollindicator scrollindicator--right">keyboard_arrow_right</i>

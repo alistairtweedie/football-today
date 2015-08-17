@@ -11,7 +11,14 @@ angular.module('football').controller('SeasonNavController', [
 			frenchFlag = 'https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg';
 
 		SeasonNav.getFlag = function (seasonId) {
+			if (!SeasonNav.hasFlag(seasonId)) {
+				return undefined;
+			}
 			return SeasonNav.config[seasonId].flag;
+		};
+
+		SeasonNav.hasFlag = function (seasonId) {
+			return angular.isDefined(SeasonNav.config[seasonId]) && angular.isDefined(SeasonNav.config[seasonId].flag);
 		};
 
 		SeasonNav.config = {
