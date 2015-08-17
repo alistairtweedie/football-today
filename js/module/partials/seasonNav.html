@@ -1,0 +1,19 @@
+<div class="nav-wrapper">
+
+			<div class="nav-bar">
+
+		        <nav class="nav">
+					<a href="#" data-ng-repeat="season in SeasonNav.seasons | orderBy:'orderId'" data-ui-sref="app.fixtures({leagueId: {{season.id}}})">
+						<span class="country" data-ng-if="SeasonNav.hasFlag(season.league)">
+					  		<img data-ng-src="{{SeasonNav.getFlag(season.league)}}" alt="">
+					  	</span>
+					  	<span data-ng-bind="season.caption.replace('2015/16', '')"></span>
+					</a>
+		        </nav>
+
+		        <i class="material-icons scrollindicator scrollindicator--right">keyboard_arrow_right</i>
+      			<i class="material-icons scrollindicator scrollindicator--left disabled">keyboard_arrow_left</i>
+
+		    </div>
+
+		</div>
